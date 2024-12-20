@@ -18,6 +18,7 @@ public class DataLoader {
             // Define the owner email and name
             String email = "john.doe@example.com";
             String name = "John Doe";
+            String password = "<PASSWORD>";
 
             // Check if the owner with this email already exists
             if (!userRepository.existsByEmail(email)) {
@@ -25,6 +26,7 @@ public class DataLoader {
                 User user = new User();
                 user.setName(name);
                 user.setEmail(email);
+                user.setPassword(password);
                 userRepository.save(user);
 
                 // Create and save a sample task for the owner
